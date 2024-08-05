@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Sankofa+Display&display=swap");
+* {
+  transition: all 0.3s ease-in-out;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: silver;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  flex-direction: column;
+}
+#gameBoard {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  background-color: gray;
+  border: 1px solid gold;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.cell:hover {
+  box-shadow: 0 4px 8px 0 gold, 0 6px 20px 0 gold;
+}
+
+.cell.x::before {
+  content: "X";
+  color: white;
+  font-size: 2em;
+  font-family: "Sankofa Display", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cell.circle::before {
+  content: "O";
+  color: white;
+  font-size: 2em;
+  font-family: "Sankofa Display", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.winning-message {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.winning-message.show {
+  display: flex;
+}
+#restartButton {
+  border: 1px solid gold;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+}
+#restartButton:hover {
+  background-color: gold;
+  border: 1px solid white;
+  color: black;
+}
